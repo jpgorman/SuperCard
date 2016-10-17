@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "F85497A3B7951E127FF7ED5C72E19D204C1ACEEE",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "32FDB55448D17104D3583DD0D9784EEDF55E0655" : 9223372036854775807,
+    "F85497A3B7951E127FF7ED5C72E19D204C1ACEEE" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "3843476F-8F25-4A34-84B4-36E23B35574B",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "32FDB55448D17104D3583DD0D9784EEDF55E0655" : "Matchismo\/",
+    "F85497A3B7951E127FF7ED5C72E19D204C1ACEEE" : "SuperCard\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "SuperCard",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "SuperCard\/SuperCard.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:jpgorman\/Matchismo.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "32FDB55448D17104D3583DD0D9784EEDF55E0655"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:jpgorman\/SuperCard.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "F85497A3B7951E127FF7ED5C72E19D204C1ACEEE"
+    }
+  ]
+}

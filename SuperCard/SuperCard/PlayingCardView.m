@@ -116,7 +116,15 @@
     UIFont *cornerFont = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
     cornerFont = [cornerFont fontWithSize:cornerFont.pointSize * [self cornerScaleFactor]];
     
-    NSAttributedString *cornerText = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@\n%@", [self rankAsString], self.suit] attributes:@{ NSFontAttributeName: cornerFont, NSParagraphStyleAttributeName: paragraphStyle}];
+    UIColor *color = ([self.suit isEqual: @"♥︎"] || [self.suit isEqual: @"♦︎"]) ? [UIColor redColor] : [UIColor blackColor];
+    
+    NSDictionary *attributes = @{
+      NSFontAttributeName: cornerFont,
+      NSParagraphStyleAttributeName: paragraphStyle,
+      NSForegroundColorAttributeName: color,
+                                 };
+    
+    NSAttributedString *cornerText = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@\n%@", [self rankAsString], self.suit] attributes:attributes];
     
     CGRect textBounds;
     textBounds.origin = CGPointMake([self cornerOffset], [self cornerOffset]);
