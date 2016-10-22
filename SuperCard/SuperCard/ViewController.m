@@ -12,7 +12,8 @@
 #import "PlayingCard.h"
 
 @interface ViewController ()
-@property (weak, nonatomic) IBOutlet PlayingCardView *playingCardView;
+@property (strong, nonatomic) IBOutletCollection(PlayingCardView) NSArray *playingCardViews;
+
 @property (strong, nonatomic) Deck *deck;
 @end
 
@@ -24,29 +25,43 @@
     return _deck;
 }
 
-- (void)drawRandomPlayingCard
+- (PlayingCard *)drawRandomPlayingCard
 {
     Card *card = [self.deck drawRandomCard];
-    if([card isKindOfClass:[PlayingCard class]]) {
-        PlayingCard *playingcard = (PlayingCard *)card;
-        self.playingCardView.rank = playingcard.rank;
-        self.playingCardView.suit = playingcard.suit;
-    }
+    PlayingCard *playingcard = (PlayingCard *)card;
+    return playingcard;
 }
 
-- (IBAction)swipe:(UISwipeGestureRecognizer *)sender {
-    if(!self.playingCardView.faceUp) [self drawRandomPlayingCard];
-    self.playingCardView.faceUp = !self.playingCardView.faceUp;
+- (void)tap:(UITapGestureRecognizer *)sender
+{
+    
+    if ((sender.state == UIGestureRecognizerStateEnded)) {
+  
+        if([sender.view isKindOfClass:[PlayingCardView class]])
+        {
+            NSUInteger index = [self.playingCardViews indexOfObject:sender.view];
+            PlayingCardView *playingCardView = [self.playingCardViews objectAtIndex:index];
+            playingCardView.faceUp = !playingCardView.faceUp;
+        }
+    }
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.playingCardView.suit = @"♥";
-    self.playingCardView.rank = 13;
-    [self.playingCardView addGestureRecognizer:[[UIPinchGestureRecognizer alloc]
-                                initWithTarget:self.playingCardView
-                                        action:@selector(pinch:)]];
+
+    for (PlayingCardView *playingCardView in self.playingCardViews) {
+        
+        
+        UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
+        
+        PlayingCard *playingCard = [self drawRandomPlayingCard];
+        playingCardView.suit = playingCard.suit;
+        playingCardView.rank = playingCard.rank;
+        playingCardView.faceUp = YES;
+        [playingCardView addGestureRecognizer:tapGestureRecognizer];
+    }
+    
 }
 
 @end

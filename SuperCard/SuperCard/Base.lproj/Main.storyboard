@@ -15,23 +15,62 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="15G-0m-7K5" customClass="PlayingCardView">
-                                <frame key="frameInset" minX="48" minY="125" width="224" height="319"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="e7e-jS-5mO" appends="YES" id="PNv-rK-BHt"/>
-                                </connections>
-                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="f6z-lA-9sY">
+                                <frame key="frameInset" minX="16" minY="20" width="335" height="96"/>
+                                <subviews>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="15G-0m-7K5" customClass="PlayingCardView">
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="64" id="Vzt-Os-c4k"/>
+                                            <constraint firstAttribute="height" constant="96" id="kGU-8U-d3t"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="e7e-jS-5mO" appends="YES" id="PNv-rK-BHt"/>
+                                        </connections>
+                                    </view>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WxE-Mx-sWE" customClass="PlayingCardView">
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="96" id="NBP-6u-R99"/>
+                                            <constraint firstAttribute="width" constant="64" id="QKz-aG-nEg"/>
+                                        </constraints>
+                                    </view>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M0l-fg-grT" customClass="PlayingCardView">
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="64" id="5Ob-EF-cNW"/>
+                                            <constraint firstAttribute="height" constant="96" id="bkM-A8-6Ro"/>
+                                        </constraints>
+                                    </view>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tqm-mc-skV" customClass="PlayingCardView">
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="96" id="Hcc-b2-3WN"/>
+                                            <constraint firstAttribute="width" constant="64" id="sFe-c8-UBH"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="f6z-lA-9sY" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" symbolic="YES" id="bkC-vU-tal"/>
+                            <constraint firstItem="f6z-lA-9sY" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" symbolic="YES" id="lJr-gl-Wbn"/>
+                            <constraint firstAttribute="trailing" secondItem="f6z-lA-9sY" secondAttribute="trailing" constant="20" symbolic="YES" id="niv-0H-duu"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="playingCardView" destination="15G-0m-7K5" id="iWO-7r-fsy"/>
+                        <outletCollection property="playingCardViews" destination="15G-0m-7K5" id="RQB-pU-UbY"/>
+                        <outletCollection property="playingCardViews" destination="WxE-Mx-sWE" id="0Ir-jA-Bwa"/>
+                        <outletCollection property="playingCardViews" destination="M0l-fg-grT" id="7g9-ZU-SnB"/>
+                        <outletCollection property="playingCardViews" destination="Tqm-mc-skV" id="ZcK-0k-VOl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
